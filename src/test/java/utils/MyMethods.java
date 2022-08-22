@@ -44,26 +44,26 @@ public class MyMethods implements Locators {
         return new String(password);
     }
     public void verifyProduktPrice(By locator1, By locator2, By locator3, By locator4) {
-        $(locator1).shouldBe(Condition.appear);
 
-
-        String strRedProduktPrice = $(locator1).getText().replaceAll("[^\\d]", "");
+        String strRedProduktPrice = $(locator1).shouldBe(Condition.appear).getText().replaceAll("[^\\d]", "");
         int redProduktPrice1 = Integer.parseInt(strRedProduktPrice);
         System.out.println("produktPriceRed= "+ redProduktPrice1);
 
-        String strBlauProduktPrice2 = $(locator2).getText().replaceAll("[^\\d]", "");
+
+        String strBlauProduktPrice2 = $(locator2).shouldBe(Condition.appear).getText().replaceAll("[^\\d]", "");
         int blauProduktPrice2 = Integer.parseInt(strBlauProduktPrice2);
         System.out.println("produktPriceBlau= "+ blauProduktPrice2);
 
 
-        String strShipping = $(locator3).getText().replaceAll("[^\\d]", "");
+        String strShipping = $(locator3).shouldBe(Condition.appear).getText().replaceAll("[^\\d]", "");
         int shipping = Integer.parseInt(strShipping);
         System.out.println("shipping= "+ shipping);
 
         int totalPrice=shipping+redProduktPrice1+blauProduktPrice2;
         System.out.println("totalPrice= " +totalPrice);
 
-        String strtotalPriceCheck = $(locator4).getText().replaceAll("[^\\d]", "");
+
+        String strtotalPriceCheck = $(locator4).shouldBe(Condition.appear).getText().replaceAll("[^\\d]", "");
         int totalPriceCheck = Integer.parseInt(strtotalPriceCheck);
 
         Assert.assertEquals(totalPrice,totalPriceCheck);

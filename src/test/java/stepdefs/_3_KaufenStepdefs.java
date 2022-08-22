@@ -24,7 +24,7 @@ public class _3_KaufenStepdefs extends MyMethods implements Locators {
     public void oneBlueRedLaptopAddToCart() throws InterruptedException {
         $(shopincardItem).shouldBe(Condition.appear).hover();
 
-
+        Thread.sleep(2000);
         if ($(shopincardItemRemove).isDisplayed()) {
             $(shopincardItemRemove).shouldBe(Condition.enabled).click();
         }
@@ -32,13 +32,13 @@ public class _3_KaufenStepdefs extends MyMethods implements Locators {
 
         Thread.sleep(1000);
         $(addToCardButton).shouldBe(Condition.enabled).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         $(redProdukt).shouldBe(Condition.enabled).click();
 
         for (int i = 0; i < 3; i++) {
             $(plusButton).shouldBe(Condition.visible).click();
         }
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         $(addToCardButton).shouldBe(Condition.visible).click();
     }
 

@@ -26,9 +26,9 @@ public class _2_LoginStepdefs extends MyMethods implements Locators {
 
     @Given("user on homePage")
     public void userOnHomePage() {
-        System.setProperty("selenide.browser", "Edge");
-        open(url);
 
+        open(url);
+        System.setProperty("selenide.browser", "Edge");
 
     }
 
@@ -41,7 +41,7 @@ public class _2_LoginStepdefs extends MyMethods implements Locators {
 
         Map<String, String> map = table.asMap(String.class, String.class);
 
-        $(inputUserName).shouldBe(Condition.appear).sendKeys( map.get("userName"));
+        $(inputUserName).shouldBe(Condition.appear ).sendKeys( map.get("userName"));
         $(inputPassword).shouldBe(Condition.appear).sendKeys(map.get("password"));
 
         $(signIn).click();
